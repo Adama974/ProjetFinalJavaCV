@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <meta charset="utf-8">
+      <script src="cv.js" defer></script>
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" integrity="sha512-234m/ySxaBP6BRdJ4g7jYG7uI9y2E74dvMua1JzkqM3LyWP43tosIqET873f3m6OQ/0N6TKyqXG4fLeHN9vKkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+        <div id="entete"> <div id="ecri">Création de votre CV</div></div>
+        <div id="rempl">
+
+            <div id="etatciv">
+                <fieldset>
+                    <legend>ETAT CIVIL</legend>
+            <div id="nom"></div>
+            <label>nom</label>
+            <input type="text" id="nomm" placeholder="nom" autocomplete="off" required>
+
+            <div id="prenom"></div>
+            <label>prenom</label>
+            <input type="text" id="prenomm" placeholder="prenom" autocomplete="off" required>
+
+
+            <div id="email"></div>
+            <label>email</label>
+            <input type="email" id="ad_mail" placeholder="adresse mail"  autocomplete="off" required>
+
+            <div id="adresse"></div>
+            <label>adresse</label>
+            <input type="text" id="ad" placeholder="adresse" autocomplete="off"  required>
+
+            <div id="tel"></div>
+            <label>téléphone</label>
+            <input type="number" id="tele" placeholder="numéro de téléphone" autocomplete="off"  required>
+    
+                </fieldset>
+
+                <fieldset>
+                    <legend>etudes et diplomes</legend>
+                     <input type="text" id="etu" placeholder="diplome " required>
+                     <input type="text" id="etu1" placeholder=" diplome" required>
+                     <input type="text" id="etu2" placeholder="diplome " autocomplete="off">
+                     <input type="text" id="etu3" placeholder=" diplome" autocomplete="off">
+                     <input type="text" id="etu4" placeholder="diplome " autocomplete="off">
+                     <input type="text" id="etu5" placeholder=" diplome" autocomplete="off">
+                </fieldset> 
+                
+                <fieldset>
+                    <legend>langues parlées et niveau (médiocre/assez bon/ bon )</legend>
+                     <input type="text" id="langue" placeholder="langue 1 " required>
+                     <input type="text" id="langue1" placeholder="langue 2 "autocomplete="off">
+                     <input type="text" id="langue2" placeholder="langue 3 " autocomplete="off">
+                     <input type="text" id="langue3" placeholder="langue 4 " autocomplete="off">
+                     <input type="text" id="langue4" placeholder="langue 5 " autocomplete="off">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Expériences professionnelles</legend>
+                    <input type="text" id="expe" placeholder="EXPERIENCE1" required>
+                    <input type="text" id="expe1" placeholder="EXPERIENCE 2">
+                    <input type="text" id="expe2" placeholder="EXPERIENCE 3">
+                    <input type="text" id="expe3" placeholder="EXPERIENCE 4">
+                    <input type="text" id="expe4" placeholder="EXPERIENCE 5">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Divers</legend>
+                    <input type="text" id="divers" placeholder="divers 1" required>
+                    <input type="text" id="divers1" placeholder="divers 2">
+                    <input type="text" id="divers2" placeholder="divers 3">
+                    <input type="text" id="divers3" placeholder="divers 4">
+                   
+                </fieldset>
+            </div>
+    
+        </div>
+        <div id="recup">
+          <div id="barre">
+            <div class="infop">
+                <div width="100%"  id="IP">INFORMATIONS PERSONNELLES       </div>
+               
+                <div style="word-wrap: break-word;" width="100%" id="recet"></div>
+                <div style="word-wrap: break-word;" width="100%" id="ren"></div>
+                <div><img src="image/e-mail.png" id="pointeur" width="15%"></div>
+                <div style="word-wrap: break-word;" width="100%" id="recad_mail"></div>
+                <div><img src="image/localisateur.png" id="pointeur" width="15%"></div>
+                <div style="word-wrap: break-word;" width="100%" id="recad"></div>
+                
+                <div><img src="image/telephone.png" id="pointeur" width="15%"></div>
+                <div style="word-wrap: break-word;" width="100%" id="rectele"></div>
+                   </div>
+                
+                   <div class="lee">
+                    <div width="100%"  class="le">LANGUES ETRANGERES     </div>
+                 <div style="word-wrap: break-word;" width="100%" id="reclangue1"></div>
+                 <div style="word-wrap: break-word;" width="100%" id="reclangue2"></div>
+                 <div style="word-wrap: break-word;" width="100%" id="reclangue3"></div>
+                 <div style="word-wrap: break-word;" width="100%" id="reclangue4"></div>
+                 <div style="word-wrap: break-word;" width="100%" id="reclangue5"></div>
+                       </div>
+          </div>
+          <div id="cad">
+            <div class="deee">
+                <div width="100%"  class="dee">DIPLOMES  ET ETUDES      </div>
+             <div style="word-wrap: break-word;" width="100%" id="recetu"></div>
+             <div style="word-wrap: break-word;" width="100%" id="recetu1"></div>
+             <div style="word-wrap: break-word;" width="100%" id="recetu2"></div>
+             <div style="word-wrap: break-word;" width="100%" id="recetu3"></div>
+             <div style="word-wrap: break-word;" width="100%" id="recetu4"></div>
+             <div style="word-wrap: break-word;" width="100%" id="rectetu5"></div>
+                   </div>
+
+                   <div class="epp">
+                    <div width="100%"  class="ep">EXPERIENCES PROFESSIONNELLES   </div>
+                 <div style="word-wrap: break-word;" width="100%" id="recexpe"></div>
+                 <div style="word-wrap: break-word;" width="100%" id="recexpe1"></div>
+                 <div style="word-wrap: break-word;" width="100%" id="recexpe2"></div>
+                 <div style="word-wrap: break-word;" width="100%" id="recexpe3"></div>
+                 <div style="word-wrap: break-word;" width="100%" id="recexpe4"></div>
+                       </div>
+
+                       <div class="dii">
+                        <div width="100%"  class="di">DIVERS  </div>
+                        <div style="word-wrap: break-word;" width="100%" id="recdivers"></div>
+                        <div style="word-wrap: break-word;" width="100%" id="recdivers1"></div>
+                        <div style="word-wrap: break-word;" width="100%" id="recdivers2"></div>
+                        <div style="word-wrap: break-word;" width="100%" id="recdivers3"></div>
+                              </div>
+          </div>
+        </div>
+        <button type="submit" id="dwn" ><div id="dl">Télécharger votre CV</div><img src="image/telecharger.png" width="8%" height="80%" id="lodl"></button>
+        <div id="editor"></div>
+    </body>
+</html>
